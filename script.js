@@ -1,35 +1,20 @@
-class Person {
-  constructor(name, age) {
-    this._name = name;
-    this._age = age;
-  }
+// Create the student object
+const student = {
+    name: "John",
+};
 
-  get name() {
-    return this._name;
-  }
-
-  get age() {
-    return this._age;
-  }
-
-  set age(age) {
-    this._age = age;
-  }
+// Function to get all keys from the object
+function getKeys(obj) {
+    return Object.keys(obj);
 }
 
-class Student extends Person {
-  study() {
-    console.log(`${this._name} is studying`);
-  }
-}
+// Testing the function
+console.log(getKeys(student)); // Output: ["name"]
 
-class Teacher extends Person {
-  teach() {
-    console.log(`${this._name} is teaching`);
-  }
-}
-
-// Do not change the code below this line
-window.Person = Person;
-window.Student = Student;
-window.Teacher = Teacher;
+// Additional test cases
+const student2 = {
+    name: "Alice",
+    age: 22,
+    city: "New York"
+};
+console.log(getKeys(student2)); // Output: ["name", "age", "city"]
